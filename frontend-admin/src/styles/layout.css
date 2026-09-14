@@ -1,0 +1,478 @@
+/* ---------------- Shell ---------------- */
+.admin-shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: var(--sidebar);
+  color: var(--bone);
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--bone);
+  margin-bottom: 36px;
+}
+
+.sidebar-brand span {
+  color: var(--rust);
+  font-style: italic;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.sidebar-link {
+  padding: 11px 14px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  color: rgba(232, 226, 212, 0.7);
+  transition: all 0.15s;
+}
+
+.sidebar-link:hover {
+  background: rgba(232, 226, 212, 0.06);
+  color: var(--bone);
+}
+
+.sidebar-link-active {
+  background: var(--gold);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.sidebar-foot {
+  border-top: 1px solid var(--line-dark);
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-logout {
+  color: var(--bone);
+  border-color: var(--line-dark);
+}
+
+.admin-content {
+  padding: 40px 44px;
+  max-width: 1180px;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 30px;
+  margin: 0 0 6px;
+}
+
+.page-subtitle {
+  color: rgba(20, 20, 15, 0.6);
+  margin: 0 0 32px;
+}
+
+.page-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+/* ---------------- Stat cards ---------------- */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.stat-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  opacity: 0.55;
+}
+
+/* ---------------- Panels & tables ---------------- */
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+
+.admin-table th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.admin-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.table-thumb {
+  width: 44px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--bone);
+}
+
+.stock-warning {
+  color: var(--rust);
+  font-weight: 600;
+}
+
+.swatch-row {
+  display: flex;
+  gap: 6px;
+}
+
+.swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  display: inline-block;
+}
+
+.status-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--bone);
+}
+
+.status-paid {
+  background: rgba(77, 124, 74, 0.15);
+  color: var(--green-ok);
+}
+
+.status-pending {
+  background: rgba(201, 162, 75, 0.2);
+  color: var(--gold);
+}
+
+.status-cancelled {
+  background: rgba(166, 61, 47, 0.15);
+  color: var(--rust);
+}
+
+.order-detail-row {
+  background: var(--paper);
+}
+
+.order-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.order-detail-item img {
+  width: 40px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.order-detail-item > div {
+  flex: 1;
+}
+
+/* ---------------- Bar chart (pure CSS) ---------------- */
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 200px;
+  margin-top: 16px;
+  padding-top: 10px;
+}
+
+.bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.bar {
+  width: 100%;
+  background: var(--gold);
+  border-radius: 3px 3px 0 0;
+  min-height: 2px;
+  transition: height 0.3s ease;
+}
+
+.bar-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  margin-top: 8px;
+  opacity: 0.6;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  max-height: 60px;
+}
+
+/* ---------------- Category chips (shared look) ---------------- */
+.category-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  background: transparent;
+  border-radius: 999px;
+  transition: all 0.15s;
+}
+
+.chip-active,
+.chip:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+/* ---------------- Login page ---------------- */
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--sidebar);
+}
+
+.login-card {
+  width: 380px;
+  background: #fff;
+  padding: 40px 36px;
+  border-radius: 10px;
+}
+
+.login-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.login-brand span {
+  color: var(--rust);
+  font-style: italic;
+}
+
+.login-card h1 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  margin: 6px 0 24px;
+}
+
+.login-hint {
+  margin-top: 18px;
+  line-height: 1.6;
+}
+
+.credentials-hint {
+  margin-top: 22px;
+  padding: 14px 16px;
+  background: var(--paper);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+}
+
+.credentials-hint .eyebrow {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.credentials-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.credentials-row code {
+  font-family: var(--font-mono);
+  background: rgba(20, 20, 15, 0.06);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.credentials-hint p {
+  font-size: 11px;
+  color: rgba(20, 20, 15, 0.55);
+  margin: 10px 0 0;
+  line-height: 1.5;
+}
+
+.credentials-hint p code {
+  font-family: var(--font-mono);
+  background: rgba(20, 20, 15, 0.06);
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
+.alert-error {
+  background: rgba(166, 61, 47, 0.1);
+  color: var(--rust);
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+/* ---------------- Modal (product form) ---------------- */
+.modal-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 15, 0.5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 20px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.modal-card {
+  background: #fff;
+  width: min(640px, 100%);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 80px);
+}
+
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 26px;
+  border-bottom: 1px solid var(--line);
+}
+
+.modal-head h2 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin: 0;
+}
+
+.drawer-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.modal-body {
+  padding: 22px 26px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.modal-foot {
+  padding: 18px 26px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dynamic-field-block {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+
+.dynamic-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 900px) {
+  .admin-shell {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: relative;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+}
